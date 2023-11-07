@@ -1,0 +1,81 @@
+.animate-container{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.jumping-image{
+    width: 200px;
+    position: absolute;
+    /* Adiciona a animação chamada 'jump' */
+    animation: jump 1s ease infinite;
+}
+
+@keyframes jump {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px); /* A imagem pula para cima */
+    }
+}
+
+/* Animação em input */
+
+.input-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+}
+
+.input-fild{
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    /* Adiciona uma transição nas propriedades border-color e transform */
+    transition: border-color 0.3s, transform 0.3s;
+}
+
+.input-fild:focus{
+    outline-color: #3498db;
+    transform: scale(1.2);
+}
+
+/* ************** Box Image ************** */
+
+.image-card{
+    position: relative;
+    width: 300px;
+    overflow: hidden;
+}
+
+img{
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 102, 255, 0.354);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    color: #fff;
+}
+
+.image-card:hover img{
+    transform: scale(1.1);
+}
+
+.image-card:hover .overlay{
+    opacity: 1;
+}
